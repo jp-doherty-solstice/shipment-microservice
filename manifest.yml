@@ -1,0 +1,12 @@
+applications:
+- name: shipment-microservice
+  path: ./build/libs/shipment-microservice-0.0.1-SNAPSHOT.jar
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  routes:
+  - route: shipment-microservice-balanced-bonobo.cfapps.io
+  services:
+  - shipment-mysql
+  - service-registry
+  stack: cflinuxfs2
